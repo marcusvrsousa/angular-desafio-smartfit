@@ -28,10 +28,10 @@
 
         <div class="form-container-closed_gym">
             <div class="input-wrapper">
-                <input type="checkbox" name="showClosed" formControlName="showClosed">
+                <input type="checkbox" id="showClosed" name="showClosed" formControlName="showClosed">
                 <label for="showClosed">Exibir unidades fechadas</label>
             </div>
-            <span>Resultados encontrados: {{ results.length }}</span>
+            <span>Resultados encontrados: {{ filteredResults.length }}</span>
         </div>
         <div class="form-container_button">
             <button class="button-primary" (click)="onSubmit()">ENCONTRAR UNIDADE</button>
