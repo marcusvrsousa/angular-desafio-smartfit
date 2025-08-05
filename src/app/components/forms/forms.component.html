@@ -1,4 +1,4 @@
-<form action="">
+<form action=""  [formGroup]="formGroup" >
     <div class="form-container">
         
         <div class="form-container_icon">
@@ -9,31 +9,33 @@
         <div class="form-container_hour">
             <h3>Qual período quer treinar?</h3>
             <div class="form-container-radio_wrapper">
-                <input type="radio" name="morning" value="morning"> 
-                <label for="morning">Manhã</label>
+                <input type="radio" name="hour" value="morning" formControlName="hour"> 
+                <label for="hour">Manhã</label>
                 <span>06:00 às 12:00</span>
             </div>
             <div class="form-container-radio_wrapper">
-                <input type="radio" name="afternoon" value="afternoon"> 
-                <label for="afternoon">Tarde</label>
+                <input type="radio" name="hour" value="afternoon" formControlName="hour"> 
+                <label for="hour">Tarde</label>
                 <span>12:01 às 18:00</span>
             </div>
             <div class="form-container-radio_wrapper">
-                <input type="radio" name="night" value="night" > 
-                <label for="night">Noite</label>
+                <input type="radio" name="hour" value="night" formControlName="hour" > 
+                <label for="hour">Noite</label>
                 <span>18:01 às 22:00</span>
             </div>
             
         </div>
 
         <div class="form-container-closed_gym">
-            <input type="checkbox" name="show-closed">
-            <label for="show-closed">Exibir unidades fechadas</label>
+            <div class="input-wrapper">
+                <input type="checkbox" name="showClosed" formControlName="showClosed">
+                <label for="showClosed">Exibir unidades fechadas</label>
+            </div>
             <span>Resultados encontrados: {{ results.length }}</span>
         </div>
         <div class="form-container_button">
-            <button class="button-primary">ENCONTRAR UNIDADE</button>
-            <button class="button-secondary">LIMPAR</button>
+            <button class="button-primary" (click)="onSubmit()">ENCONTRAR UNIDADE</button>
+            <button class="button-secondary" (click)="onClean()">LIMPAR</button>
         </div>
     </div>
 </form>
